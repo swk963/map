@@ -1,0 +1,74 @@
+git --version		查看版本
+git clear			清屏
+——————配置——————
+git config --global user.name+提交人姓名
+git config --global user.email+提交人邮箱
+git config --list		查看git配置信息
+——————使用——————
+git init			初始化git仓库  自动创建一个 .git 的隐藏文件夹
+git status			查看文件状态
+git add+文件名		放到缓存区 （选所有 新建+修改 文件）
+git commit -m +备注  	向仓库中提交代码 提交完以后缓存区就没有了
+git log 			查看提交历史记录
+（恢复缓存区备份）
+git checkout+文件名	使用缓存区备份
+（删除缓存区备份）
+git rm --cached +文件名	删除缓存区文件
+（恢复git仓库指定版本）
+git reset --hard 提交ID	恢复到指定版本，删除指定之后版本的提交信息(右键复制)
+
+——————分支——————
+git branch		查看分支 ' * '当前分支位置( 绿字 ) 未选中( 白字 ) 路径后面有名字
+git branch +分支名称  	创建一个develop的分支
+git checkout +分支名称	切换分支 	
+			切换回主分支时，文件夹中以上传git，并且缓存区没有缓存			的开发分支的文件会 隐形
+git merge +a分支名称	合并分支（当前分支 吃掉 a分支，但a分支任然存在）
+git branch -d +分支名称	删除分支（分支被合并后才允许删除）（-d 改 -D 强制删除)
+			不能删除当前选中的分支  强制删除后文件红就真删除了
+			
+——————暂时保存（剪切）——————
+git stash			存储临时改动
+git stash pop		恢复改动
+
+————git远程仓库————
+git push + 仓库链接 +  分支名		将本地仓库推送到远程仓库
+   git remote add + 别名 + 仓库链接	给远程仓库配置别名
+git push + 别名 + 分支名		使用别名
+   git push -u + 别名 + 分支名		加 - u 记住别名 和 分支名
+   git push			加 -u 以后下次可用
+邀请：设置 合作者
+git clone + 远程仓库地址		克隆仓库
+git pull + 远程仓库地址 + 分支名	拉取远程最新版本
+先pull再 上传 避免冲突 ( 远程版本高于本地无法提交 )
+
+——————ssh免密登录——————
+ssh-keygen		生成的密钥
+公钥 名字长 id_rsa.pub
+私钥 名字短 id_rsa
+复制公钥上传到网页
+上传时选 ssh 网址
+
+——————GIT忽略清单——————
+创建.gitignore文件   添加要忽略的文件		
+
+—————  仓库的详细说明  —————
+readme. md	需要上传 
+
+概念：
+
+主分支（master）
+
+开发分支（develop）
+
+功能分支（feature）
+
+add   commit  push
+
+配置config  分支branch  远程push
+
+remote -v 查看别名
+
+
+
+
+
