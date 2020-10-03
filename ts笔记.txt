@@ -1,0 +1,130 @@
+ * 安装ts
+npm i -g typescript
+
+用法：tsc 文件.ts 该指令作用ts 转 js
+
+问题：tsc报错（此系统上禁止运行脚本无法加载,about_Execution_Policies）
+
+解决：
+1、管理员身份打开powershell
+2、执行  Set-ExecutionPolicy -ExecutionPolicy UNRESTRICTED
+3、选择Y
+
+ * 安装 ts-node 
+直接运行ts文件 隐式转换成js文件
+ts-node xxx.ts
+
+ps：直接node xxx.ts（node无法识别ts语法，会报错，只能运行js部分）
+
+方法：
+一、在vscode中运行js文件 node 文件名.js
+二、多行注释快捷键 shift+alt+a（html和js、ts都一样）
+
+
+笔记：
+一、声明方式
+声     明：let age: number
+声明+赋值：let age: number = 18
+（: number）官方名称类型注解
+变量命名规范：数字，字母，下划线，$。不能以数字开头
+
+二、断点调试
+位置：vscode左侧倒数第二个图标（绿色三角启动调试）
+1、生成launch.json配置文件
+配置如下：
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+             // 在启动下拉框中显示的名称
+            "name": "调试ts代码",
+            // 用ts-node命令运行ts代码
+            "runtimeArgs": ["-r","ts-node/register"],
+            // hello.ts要调试的代码
+            "args": ["${workspaceFolder}/hello.ts"]
+        }
+    ]
+2、在当前目录安装 ts-node 和 typescript
+
+3、监视变量：监视模块的加号添加表达式或者变量
+
+
+三、声明数组
+空数组：let arr: [] = []
+数字数组：let arr: number[] = []
+
+四、声明对象
+1、对象类型注解：
+let obj: {
+    name:string
+    age:number
+}
+
+2、赋值：
+obj = { name:"swk",age:18 }
+赋值必须有注解的属性，并且值符合约定
+
+3、封装注解（接口）：
+interface 关键字 名称以大写的i开头（规范）
+创建：interface IAuser { name：string }
+使用：let obj：IAuser = { name: "swk" }
+
+ps: 对象属性是函数类型为（fn：()=>void）
+
+五、函数同js
+形参要声明类型：
+function fn( a:string ) { }
+
+
+(ts 类型推论)
+声明类型：xxx 可以省略，let a = 1 ,等价于 let a: number = 1
+注意：	let a ; a = 1 这样分开写不会触发ts类型推论
+	函数会触发类型推论
+
+any类型：
+any = 任意类型
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+笔记：
+break 跳过之后所有
+continue 跳过之后的
+
+自动刷新浏览器 vscode 插件 Live Server 用法 又击open with live srver （路径不要带中文）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
