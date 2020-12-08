@@ -84,9 +84,11 @@ function fn( a:string ) { }
 any类型：
 any = 任意类型
 
+联合类型:
+let 变量名: number | string
 
-
-
+unedfined 和 null 类型:
+只能赋值 unedfined 或 null
 
 
 
